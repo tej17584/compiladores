@@ -1,6 +1,11 @@
 grammar decafV2;
-LETTER: ('a' ..'z' | 'A' ..'Z');
+
+// ************ DEFINITIONS *******************
+fragment LETTER: ('a' ..'z' | 'A' ..'Z');
 fragment DIGIT: '0' ..'9';
+
+// *************TOKENS *********************
+CHAR2: LETTER;
 ID: LETTER ( LETTER | DIGIT)*;
 NUM: DIGIT (DIGIT)*;
 COMMENTS: '//' ~('\r' | '\n')* -> channel(HIDDEN);
@@ -75,6 +80,6 @@ literal: int_literal | char_literal | bool_literal;
 
 int_literal: NUM;
 
-char_literal: '\'' LETTER '\'';
+char_literal: '\'' CHAR2 '\'' | '"' CHAR2 '"';
 
 bool_literal: 'true' | 'false';

@@ -10,8 +10,6 @@ class Program {
 
   int Eat(int weight)
   {
-    int ss;
-    ss = 10;
     weight = weight * 2 + 5 % 100;
     return weight;
   }
@@ -19,8 +17,7 @@ class Program {
   void Moo(boolean moo)
   {
     char message;
-    int aa;
-    message = "o";
+    message = 'o';
     if (moo)
     {
       makeSound(message);
@@ -35,7 +32,7 @@ class Program {
     struct Cow betsy;
     betsy.height = 5;
     betsy.weight = 10;
-    besty.name = 'a';
+    besty.name = 'b';
     Moo(true);
     betsy.weight = Eat(betsy.weight);
   }

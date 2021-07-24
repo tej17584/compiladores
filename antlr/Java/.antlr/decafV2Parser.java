@@ -1,4 +1,4 @@
-// Generated from decafV2.g4 by ANTLR 4.9.2
+// Generated from c:\Users\josea\Desktop\Compiladores\antlr\Java\decafV2.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class decafV2Parser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -120,14 +120,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterProgram(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitProgram(this);
-		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -186,14 +178,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_declaration; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterDeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitDeclaration(this);
-		}
 	}
 
 	public final DeclarationContext declaration() throws RecognitionException {
@@ -247,14 +231,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_varDeclaration; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterVarDeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitVarDeclaration(this);
-		}
 	}
 
 	public final VarDeclarationContext varDeclaration() throws RecognitionException {
@@ -317,14 +293,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_structDeclaration; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterStructDeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitStructDeclaration(this);
-		}
 	}
 
 	public final StructDeclarationContext structDeclaration() throws RecognitionException {
@@ -378,14 +346,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_varType; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterVarType(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitVarType(this);
-		}
 	}
 
 	public final VarTypeContext varType() throws RecognitionException {
@@ -470,14 +430,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_methodDeclaration; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterMethodDeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitMethodDeclaration(this);
-		}
 	}
 
 	public final MethodDeclarationContext methodDeclaration() throws RecognitionException {
@@ -539,14 +491,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_methodType; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterMethodType(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitMethodType(this);
-		}
 	}
 
 	public final MethodTypeContext methodType() throws RecognitionException {
@@ -588,14 +532,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_parameter; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterParameter(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitParameter(this);
-		}
 	}
 
 	public final ParameterContext parameter() throws RecognitionException {
@@ -645,14 +581,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_parameterType; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterParameterType(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitParameterType(this);
-		}
 	}
 
 	public final ParameterTypeContext parameterType() throws RecognitionException {
@@ -702,14 +630,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_block; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterBlock(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitBlock(this);
-		}
 	}
 
 	public final BlockContext block() throws RecognitionException {
@@ -784,14 +704,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitStatement(this);
-		}
 	}
 
 	public final StatementContext statement() throws RecognitionException {
@@ -932,14 +844,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_location; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterLocation(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitLocation(this);
-		}
 	}
 
 	public final LocationContext location() throws RecognitionException {
@@ -1018,14 +922,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expression; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitExpression(this);
-		}
 	}
 
 	public final ExpressionContext expression() throws RecognitionException {
@@ -1141,14 +1037,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_methodCall; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterMethodCall(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitMethodCall(this);
-		}
 	}
 
 	public final MethodCallContext methodCall() throws RecognitionException {
@@ -1209,14 +1097,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arg; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterArg(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitArg(this);
-		}
 	}
 
 	public final ArgContext arg() throws RecognitionException {
@@ -1257,14 +1137,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterOp(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitOp(this);
-		}
 	}
 
 	public final OpContext op() throws RecognitionException {
@@ -1331,14 +1203,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arith_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterArith_op(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitArith_op(this);
-		}
 	}
 
 	public final Arith_opContext arith_op() throws RecognitionException {
@@ -1376,14 +1240,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rel_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterRel_op(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitRel_op(this);
-		}
 	}
 
 	public final Rel_opContext rel_op() throws RecognitionException {
@@ -1421,14 +1277,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_eq_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterEq_op(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitEq_op(this);
-		}
 	}
 
 	public final Eq_opContext eq_op() throws RecognitionException {
@@ -1466,14 +1314,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cond_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterCond_op(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitCond_op(this);
-		}
 	}
 
 	public final Cond_opContext cond_op() throws RecognitionException {
@@ -1520,14 +1360,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_literal; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitLiteral(this);
-		}
 	}
 
 	public final LiteralContext literal() throws RecognitionException {
@@ -1581,14 +1413,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_int_literal; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterInt_literal(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitInt_literal(this);
-		}
 	}
 
 	public final Int_literalContext int_literal() throws RecognitionException {
@@ -1618,14 +1442,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_char_literal; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterChar_literal(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitChar_literal(this);
-		}
 	}
 
 	public final Char_literalContext char_literal() throws RecognitionException {
@@ -1677,14 +1493,6 @@ public class decafV2Parser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_bool_literal; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).enterBool_literal(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof decafV2Listener ) ((decafV2Listener)listener).exitBool_literal(this);
-		}
 	}
 
 	public final Bool_literalContext bool_literal() throws RecognitionException {
