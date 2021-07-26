@@ -1,11 +1,15 @@
 grammar decafV1;
-fragment LETTER: ('a' ..'z' | 'A' ..'Z');
+
+// ************ DEFINITIONS *******************
+LETTER: ('a' ..'z' | 'A' ..'Z');
 fragment DIGIT: '0' ..'9';
-ID: LETTER ( LETTER | DIGIT)*;
+
+// *************TOKENS *********************
+CHAR2: LETTER;
+id: LETTER ( LETTER | DIGIT)*;
 NUM: DIGIT (DIGIT)*;
 COMMENTS: '//' ~('\r' | '\n')* -> channel(HIDDEN);
-WS: [ \t\r\n\f]+ -> channel(HIDDEN);
-CHAR: '\'' ( ~['\r\n\\] | '\\' ['\\]) '\'';
+WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 // ********** PARSER *****************
 
 program: 'class' 'Program' '{' (declaration)* '}';
@@ -15,24 +19,24 @@ declaration:
 	| varDeclaration
 	| methodDeclaration;
 
-varDeclaration: varType ID ';' | varType ID '[' NUM ']' ';';
+varDeclaration: varType id ';' | varType id '[' NUM ']' ';';
 
-structDeclaration: 'struct' ID '{' (varDeclaration)* '}';
+structDeclaration: 'struct' id '{' (varDeclaration)* '}' (';')?;
 
 varType:
 	'int'
 	| 'char'
 	| 'boolean'
-	| 'struct' ID
+	| 'struct' id
 	| structDeclaration
 	| 'void';
 
 methodDeclaration:
-	methodType ID '(' (parameter (',' parameter)*)* ')' block;
+	methodType id '(' (parameter (',' parameter)*)* ')' block;
 
 methodType: 'int' | 'char' | 'boolean' | 'void';
 
-parameter: parameterType ID | parameterType ID '[' ']';
+parameter: parameterType id | parameterType id '[' ']' | 'void';
 
 parameterType: 'int' | 'char' | 'boolean';
 
@@ -41,15 +45,13 @@ block: '{' (varDeclaration)* (statement)* '}';
 statement:
 	'if' '(' expression ')' block ('else' block)?
 	| 'while' '(' expression ')' block
-	| 'return' expressionA ';'
+	| 'return' (expression)? ';'
 	| methodCall ';'
 	| block
 	| location '=' expression
 	| (expression)? ';';
 
-expressionA: expression |;
-
-location: (ID | ID '[' expression ']') ('.' location)?;
+location: (id | id '[' expression ']') ('.' location)?;
 
 expression:
 	location
@@ -60,7 +62,7 @@ expression:
 	| '!' expression
 	| '(' expression ')';
 
-methodCall: ID '(' (arg (',')?)* ')';
+methodCall: id '(' arg? (',' arg)* ')';
 
 arg: expression;
 
@@ -78,6 +80,6 @@ literal: int_literal | char_literal | bool_literal;
 
 int_literal: NUM;
 
-char_literal: '\'' CHAR '\'';
+char_literal: '\'' LETTER '\'' | '"' LETTER '"';
 
 bool_literal: 'true' | 'false';
