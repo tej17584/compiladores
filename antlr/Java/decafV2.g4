@@ -1,13 +1,13 @@
 grammar decafV2;
 
 // ************ DEFINITIONS *******************
-LETTER: ('a' ..'z' | 'A' ..'Z');
+fragment LETTER: ('a' ..'z' | 'A' ..'Z');
 fragment DIGIT: '0' ..'9';
 
 // *************TOKENS *********************
-CHAR2: LETTER;
-id: LETTER ( LETTER | DIGIT)*;
+ID: LETTER ( LETTER | DIGIT)*;
 NUM: DIGIT (DIGIT)*;
+CHAR: LETTER;
 COMMENTS: '//' ~('\r' | '\n')* -> channel(HIDDEN);
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 // ********** PARSER *****************
@@ -19,24 +19,24 @@ declaration:
 	| varDeclaration
 	| methodDeclaration;
 
-varDeclaration: varType id ';' | varType id '[' NUM ']' ';';
+varDeclaration: varType ID ';' | varType ID '[' NUM ']' ';';
 
-structDeclaration: 'struct' id '{' (varDeclaration)* '}' (';')?;
+structDeclaration: 'struct' ID '{' (varDeclaration)* '}' (';')?;
 
 varType:
 	'int'
 	| 'char'
 	| 'boolean'
-	| 'struct' id
+	| 'struct' ID
 	| structDeclaration
 	| 'void';
 
 methodDeclaration:
-	methodType id '(' (parameter (',' parameter)*)* ')' block;
+	methodType ID '(' (parameter (',' parameter)*)* ')' block;
 
 methodType: 'int' | 'char' | 'boolean' | 'void';
 
-parameter: parameterType id | parameterType id '[' ']' | 'void';
+parameter: parameterType ID | parameterType ID '[' ']' | 'void';
 
 parameterType: 'int' | 'char' | 'boolean';
 
@@ -51,7 +51,7 @@ statement:
 	| location '=' expression
 	| (expression)? ';';
 
-location: (id | id '[' expression ']') ('.' location)?;
+location: (ID | ID '[' expression ']') ('.' location)?;
 
 expression:
 	location
@@ -62,7 +62,7 @@ expression:
 	| '!' expression
 	| '(' expression ')';
 
-methodCall: id '(' arg? (',' arg)* ')';
+methodCall: ID '(' arg? (',' arg)* ')';
 
 arg: expression;
 
@@ -80,6 +80,6 @@ literal: int_literal | char_literal | bool_literal;
 
 int_literal: NUM;
 
-char_literal: '\'' LETTER '\'' | '"' LETTER '"';
+char_literal: '\'' CHAR '\'' | '"' CHAR '"';
 
 bool_literal: 'true' | 'false';

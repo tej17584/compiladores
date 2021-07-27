@@ -15,18 +15,6 @@ public class decafV2BaseListener implements decafV2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(decafV2Parser.IdContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitId(decafV2Parser.IdContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterProgram(decafV2Parser.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
