@@ -5,11 +5,11 @@ fragment LETTER: ('a' ..'z' | 'A' ..'Z');
 fragment DIGIT: '0' ..'9';
 
 // *************TOKENS *********************
-CHAR2: LETTER;
 ID: LETTER ( LETTER | DIGIT)*;
 NUM: DIGIT (DIGIT)*;
+CHAR: LETTER;
 COMMENTS: '//' ~('\r' | '\n')* -> channel(HIDDEN);
-WS: [ \t\r\n\f]+ -> channel(HIDDEN);
+WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
 // ********** PARSER *****************
 
 program: 'class' 'Program' '{' (declaration)* '}';
@@ -21,7 +21,7 @@ declaration:
 
 varDeclaration: varType ID ';' | varType ID '[' NUM ']' ';';
 
-structDeclaration: 'struct' ID '{' (varDeclaration)* '}';
+structDeclaration: 'struct' ID '{' (varDeclaration)* '}' (';')?;
 
 varType:
 	'int'
@@ -32,11 +32,11 @@ varType:
 	| 'void';
 
 methodDeclaration:
-	methodType ID '(' (parameter (',')?)* ')' block;
+	methodType ID '(' (parameter (',' parameter)*)* ')' block;
 
 methodType: 'int' | 'char' | 'boolean' | 'void';
 
-parameter: parameterType ID | parameterType ID '[' ']';
+parameter: parameterType ID | parameterType ID '[' ']' | 'void';
 
 parameterType: 'int' | 'char' | 'boolean';
 
@@ -62,7 +62,7 @@ expression:
 	| '!' expression
 	| '(' expression ')';
 
-methodCall: ID '(' (arg (',')?)* ')';
+methodCall: ID '(' arg? (',' arg)* ')';
 
 arg: expression;
 
@@ -80,6 +80,6 @@ literal: int_literal | char_literal | bool_literal;
 
 int_literal: NUM;
 
-char_literal: '\'' CHAR2 '\'' | '"' CHAR2 '"';
+char_literal: '\'' CHAR '\'' | '"' CHAR '"';
 
 bool_literal: 'true' | 'false';

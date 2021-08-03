@@ -1,4 +1,4 @@
-grammar decafV3;
+grammar decaf;
 
 // Tokens inician con mayuscula
 
@@ -6,11 +6,9 @@ grammar decafV3;
 
 fragment DIGIT: [0-9];
 
-LETTER: ('a' ..'z' | 'A' ..'Z');
+LETTER: ('a' ..'z' | 'A' ..'Z')+;
 
 WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
-
-id: LETTER (LETTER | DIGIT)*;
 
 NUM: DIGIT (DIGIT)*;
 
@@ -18,29 +16,37 @@ NUM: DIGIT (DIGIT)*;
 
 start: 'class' 'Program' '{' (declaration)* '}';
 
+id_tok: LETTER (LETTER | DIGIT)*;
+
 declaration:
 	structDeclaration
 	| varDeclaration
 	| methodDeclaration;
 
-varDeclaration: varType id ';' | varType id '[' NUM ']' ';';
+varDeclaration:
+	varType id_tok ';'
+	| varType id_tok '[' NUM ']' ';';
 
-structDeclaration: 'struct' id '{' (varDeclaration)* '}' (';')?;
+structDeclaration:
+	'struct' id_tok '{' (varDeclaration)* '}' (';')?;
 
 varType:
 	'int'
 	| 'char'
 	| 'boolean'
-	| 'struct' id
+	| 'struct' id_tok
 	| structDeclaration
 	| 'void';
 
 methodDeclaration:
-	methodType id '(' (parameter (',' parameter)*)* ')' block;
+	methodType id_tok '(' (parameter (',' parameter)*)* ')' block;
 
 methodType: 'int' | 'char' | 'boolean' | 'void';
 
-parameter: parameterType id | parameterType id '[' ']' | 'void';
+parameter:
+	parameterType id_tok
+	| parameterType id_tok '[' ']'
+	| 'void';
 
 parameterType: 'int' | 'char' | 'boolean';
 
@@ -55,7 +61,7 @@ statement:
 	| location '=' expression
 	| (expression)? ';';
 
-location: (id | id '[' expression ']') ( '.' location)?;
+location: (id_tok | id_tok '[' expression ']') ( '.' location)?;
 
 expression:
 	location
@@ -66,7 +72,7 @@ expression:
 	| '!' expression
 	| '(' expression ')';
 
-methodCall: id '(' arg? (',' arg)* ')';
+methodCall: id_tok '(' arg? (',' arg)* ')';
 
 arg: expression;
 
