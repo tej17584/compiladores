@@ -8,7 +8,7 @@ import sys
 
 class KeyPrinter(decafListener):
     def exitKey(self, ctx):
-        print("Hello: %s" % ctx.ID())
+        print("Hola: %s" % ctx.ID())
 
 
 def traverse(tree, rule_names, indent=0):
@@ -25,7 +25,7 @@ def traverse(tree, rule_names, indent=0):
 
 
 def main():
-    print("Listo")
+    print("Imprimiendo el árbol..................")
     data = open('antlr/Python3/programs/test.txt').read()
     lexer = decafLexer(InputStream(data))
     stream = CommonTokenStream(lexer)

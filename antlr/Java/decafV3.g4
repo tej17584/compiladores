@@ -1,4 +1,4 @@
-grammar decaf;
+grammar decafV3;
 
 // Tokens inician con mayuscula
 

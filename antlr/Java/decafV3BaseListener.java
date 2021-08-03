@@ -15,18 +15,6 @@ public class decafV3BaseListener implements decafV3Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(decafV3Parser.IdContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitId(decafV3Parser.IdContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterStart(decafV3Parser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -34,6 +22,18 @@ public class decafV3BaseListener implements decafV3Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStart(decafV3Parser.StartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterId_tok(decafV3Parser.Id_tokContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitId_tok(decafV3Parser.Id_tokContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
