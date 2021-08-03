@@ -26,7 +26,7 @@ def traverse(tree, rule_names, indent=0):
 
 def main():
     print("Listo")
-    data = open('./decafPrograms/hello_world.txt').read()
+    data = open('antlr/Python3/programs/test.txt').read()
     lexer = decafLexer(InputStream(data))
     stream = CommonTokenStream(lexer)
     parser = decafParser(stream)
