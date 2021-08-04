@@ -15,25 +15,25 @@ public class decafV1BaseListener implements decafV1Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(decafV1Parser.IdContext ctx) { }
+	@Override public void enterStart(decafV1Parser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(decafV1Parser.IdContext ctx) { }
+	@Override public void exitStart(decafV1Parser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(decafV1Parser.ProgramContext ctx) { }
+	@Override public void enterId_tok(decafV1Parser.Id_tokContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProgram(decafV1Parser.ProgramContext ctx) { }
+	@Override public void exitId_tok(decafV1Parser.Id_tokContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

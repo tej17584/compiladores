@@ -7,25 +7,25 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface decafV1Listener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link decafV1Parser#id}.
+	 * Enter a parse tree produced by {@link decafV1Parser#start}.
 	 * @param ctx the parse tree
 	 */
-	void enterId(decafV1Parser.IdContext ctx);
+	void enterStart(decafV1Parser.StartContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link decafV1Parser#id}.
+	 * Exit a parse tree produced by {@link decafV1Parser#start}.
 	 * @param ctx the parse tree
 	 */
-	void exitId(decafV1Parser.IdContext ctx);
+	void exitStart(decafV1Parser.StartContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link decafV1Parser#program}.
+	 * Enter a parse tree produced by {@link decafV1Parser#id_tok}.
 	 * @param ctx the parse tree
 	 */
-	void enterProgram(decafV1Parser.ProgramContext ctx);
+	void enterId_tok(decafV1Parser.Id_tokContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link decafV1Parser#program}.
+	 * Exit a parse tree produced by {@link decafV1Parser#id_tok}.
 	 * @param ctx the parse tree
 	 */
-	void exitProgram(decafV1Parser.ProgramContext ctx);
+	void exitId_tok(decafV1Parser.Id_tokContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link decafV1Parser#declaration}.
 	 * @param ctx the parse tree
