@@ -1,4 +1,4 @@
-// Generated from c:\Users\josea\Desktop\Compiladores\antlr\Java\decafJose.g4 by ANTLR 4.8
+// Generated from c:\Users\josea\Desktop\Compiladores\antlr\Python3\decafJavier.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class decafV3Lexer extends Lexer {
+public class decafJoseLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -95,13 +95,13 @@ public class decafV3Lexer extends Lexer {
 	}
 
 
-	public decafV3Lexer(CharStream input) {
+	public decafJoseLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "decafJose.g4"; }
+	public String getGrammarFileName() { return "decafJavier.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

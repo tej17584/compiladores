@@ -1,4 +1,4 @@
-// Generated from c:\Users\josea\Desktop\Compiladores\antlr\Java\decafV2.g4 by ANTLR 4.8
+// Generated from c:\Users\josea\Desktop\Compiladores\antlr\Java\decafAlejandro.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -101,7 +101,7 @@ public class decafV2Lexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "decafV2.g4"; }
+	public String getGrammarFileName() { return "decafAlejandro.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

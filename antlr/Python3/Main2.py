@@ -1,12 +1,12 @@
 from antlr4 import *
 from antlr4.tree.Trees import TerminalNode
-from decafLexer import decafLexer
-from decafListener import decafListener
-from decafParser import decafParser
+from decafAlejandroLexer import decafAlejandroLexer
+from decafAlejandroListener import decafAlejandroListener
+from decafAlejandroParser import decafAlejandroParser
 import sys
 
 
-class KeyPrinter(decafListener):
+class KeyPrinter(decafAlejandroListener):
     def exitKey(self, ctx):
         print("Hola: %s" % ctx.ID())
 
@@ -27,10 +27,10 @@ def traverse(tree, rule_names, indent=0):
 def main():
     print("Imprimiendo el árbol..................")
     data = open('antlr/Python3/programs/test.txt').read()
-    lexer = decafLexer(InputStream(data))
+    lexer = decafAlejandroLexer(InputStream(data))
     stream = CommonTokenStream(lexer)
-    parser = decafParser(stream)
-    tree = parser.start()
+    parser = decafAlejandroParser(stream)
+    tree = parser.program()
 
     printer = KeyPrinter()
     walker = ParseTreeWalker()
