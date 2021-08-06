@@ -27,6 +27,18 @@ public class decafJavierBaseListener implements decafJavierListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDeclaration(decafJavierParser.DeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDeclaration(decafJavierParser.DeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterVardeclr(decafJavierParser.VardeclrContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -82,6 +94,18 @@ public class decafJavierBaseListener implements decafJavierListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVar_id(decafJavierParser.Var_idContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStruct_declr(decafJavierParser.Struct_declrContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStruct_declr(decafJavierParser.Struct_declrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -17,6 +17,16 @@ public interface decafJavierListener extends ParseTreeListener {
 	 */
 	void exitProgram(decafJavierParser.ProgramContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link decafJavierParser#declaration}.
+	 * @param ctx the parse tree
+	 */
+	void enterDeclaration(decafJavierParser.DeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link decafJavierParser#declaration}.
+	 * @param ctx the parse tree
+	 */
+	void exitDeclaration(decafJavierParser.DeclarationContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link decafJavierParser#vardeclr}.
 	 * @param ctx the parse tree
 	 */
@@ -66,6 +76,16 @@ public interface decafJavierListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVar_id(decafJavierParser.Var_idContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link decafJavierParser#struct_declr}.
+	 * @param ctx the parse tree
+	 */
+	void enterStruct_declr(decafJavierParser.Struct_declrContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link decafJavierParser#struct_declr}.
+	 * @param ctx the parse tree
+	 */
+	void exitStruct_declr(decafJavierParser.Struct_declrContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link decafJavierParser#method_declr}.
 	 * @param ctx the parse tree
