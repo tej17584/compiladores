@@ -3,6 +3,8 @@ from antlr4.tree.Trees import TerminalNode
 from decafAlejandroLexer import decafAlejandroLexer
 from decafAlejandroListener import decafAlejandroListener
 from decafAlejandroParser import decafAlejandroParser
+from nltk import Tree
+from antlr4.tree.Trees import Trees
 import sys
 
 
@@ -35,8 +37,11 @@ def main():
     printer = KeyPrinter()
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
-
     traverse(tree, parser.ruleNames)
+    #print(Trees.toStringTree(tree, None, parser))
+    # print(Trees.getChildren(tree))
+    listaHijos = Trees.getChildren(tree)
+    print(listaHijos)
 
 
 if __name__ == '__main__':
